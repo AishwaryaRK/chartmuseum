@@ -95,7 +95,6 @@ func NewRouter(options RouterOptions) *Router {
 
 	if options.EnableMetrics {
 		p := ginprometheus.NewPrometheus("chartmuseum")
-		p.ReqCntURLLabelMappingFn = mapURLWithParamsBackToRouteTemplate
 		p.Use(engine)
 	}
 
